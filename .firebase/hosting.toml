@@ -1,0 +1,4 @@
+[[headers]]
+  source = "/icons/*"
+  [headers.headers]
+    Content-Type = "image/png"
