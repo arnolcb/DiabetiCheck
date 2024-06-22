@@ -1,9 +1,9 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
-String apiKey = "";
-
 Future<Map<String, dynamic>> sendTextCompletionRequest(String message) async {
+  String apiKey = dotenv.env['OPENAI_API_KEY'] ?? '';
   String baseUrl = "https://api.openai.com/v1/chat/completions";
   Map<String, String> headers = {
     "Content-Type": "application/json; charset=UTF-8",
