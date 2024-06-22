@@ -42,7 +42,6 @@
 <body>
   <script>
     window.addEventListener('load', function(ev) {
-      // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
@@ -51,6 +50,8 @@
         return engineInitializer.initializeEngine();
       }).then(function(appRunner) {
         return appRunner.runApp();
+      }).catch(function(error) {
+        console.error("Error during Flutter initialization:", error);
       });
     });
   </script>
